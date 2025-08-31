@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-08-31T00:02:41.326Z",
+  "source": "StepStone",
+  "totalJobs": 8,
+  "jobs": [
+    {
+      "title": "Software Developer (m/w/x)",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.stepstone.de/stellenangebote--Software-Developer-m-w-x-Muenchen-ZEISS--12938313-inline.html",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Energy Trading Algorithm Developer (f/m/d)",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.stepstone.de/stellenangebote--Energy-Trading-Algorithm-Developer-f-m-d-Essen-Muenchen-E-ON-Energy-Markets-GmbH--12937676-inline.html",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Backend Engineer (all genders)",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.stepstone.de/stellenangebote--Backend-Engineer-all-genders-Muenchen-Avelios-Medical-GmbH--12916688-inline.html",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Support Engineer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.stepstone.de/stellenangebote--Support-Engineer-Muenchen-Arbin-Instruments--10664822-inline.html",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Senior Software Architect (f/m/x)",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.stepstone.de/stellenangebote--Senior-Software-Architect-f-m-x-Muenchen-ZEISS--12865703-inline.html",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "SAP Developer (m/f/d)",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.stepstone.de/stellenangebote--SAP-Developer-m-f-d-Kaufering-Muenchen-Hilti-Entwicklungsgesellschaft-mbH--12947553-inline.html",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Student Worker Satellite Navigation Engineering (m/f/d)",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.stepstone.de/stellenangebote--Student-Worker-Satellite-Navigation-Engineering-m-f-d-Muenchen-spaceopal-GmbH--11832122-inline.html",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Senior Data Platform Engineer - MS Fabric and Power BI (f/m/d)",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.stepstone.de/stellenangebote--Senior-Data-Platform-Engineer-MS-Fabric-and-Power-BI-f-m-d-Essen-Berlin-Frankfurt-am-Main-Hamburg-Hannover-Muenchen-Wuerzburg-E-ON-Digital-Technology-GmbH--12925026-inline.html",
+      "description": "",
+      "postedDate": "2025-08-31"
+    }
+  ]
+}

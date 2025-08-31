@@ -1,0 +1,103 @@
+{
+  "timestamp": "2025-08-31T00:28:41.190Z",
+  "source": "Glassdoor",
+  "totalJobs": 12,
+  "jobs": [
+    {
+      "title": "Software Engineer (Python, C++, AI, Java Script)",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/software-engineer-python-c-ai-java-script-paanduv-JV_IC2874425_KO0,41_KE42,49.htm?jl=1009404149337",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "FEA Software Developer (R&D)",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/fea-software-developer-rd-paanduv-JV_IC2874425_KO0,25_KE26,33.htm?jl=1008626256606",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Hiring Laravel Developer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/hiring-laravel-developer-banttech-JV_IC2874425_KO0,24_KE25,33.htm?jl=1009859729479",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Dot Net Developer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/dot-net-developer-sd-web-solution-JV_IC2874425_KO0,17_KE18,33.htm?jl=1009800226362",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Dot Net Developer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/dot-net-developer-efox-technologies-private-limited-JV_KO0,17_KE18,51.htm?jl=1009752229612",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Dot Net Developer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/dot-net-developer-efox-technologies-private-limited-JV_IC2874425_KO0,17_KE18,51.htm?jl=1009756565595",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Software Sales Engineer - AM Simulations",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/software-sales-engineer-am-simulations-paanduv-JV_IC2874425_KO0,38_KE39,46.htm?jl=1009661456100",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Web Developer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/web-developer-inch-brick-realty-pvt-ltd-JV_KO0,13_KE14,39.htm?jl=1009802441426",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Senior Developer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/senior-developer-scholars-den-JV_IC2874407_KO0,16_KE17,29.htm?jl=1009841864613",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Sr. Java Engineer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/sr-java-engineer-invokhr-JV_KO0,16_KE17,24.htm?jl=1009498184292",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "PHP Laravel Developer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/php-laravel-developer-techmave-software-llp-JV_IC4476529_KO0,21_KE22,43.htm?jl=1009833061528",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "PHP/ Web Developer",
+      "company": "Unknown Company",
+      "location": "Munich",
+      "url": "https://www.glassdoor.co.in/job-listing/php-web-developer-mesh-creation-JV_KO0,17_KE18,31.htm?jl=1007033754232",
+      "description": "",
+      "postedDate": "2025-08-31"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-08-31T00:03:22.537Z",
+  "source": "Google Careers",
+  "totalJobs": 2,
+  "jobs": [
+    {
+      "title": "Software Engineer II, AI-Powered Developer Experience",
+      "company": "Google",
+      "location": "Munich, Germany",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/86805419019641542-software-engineer-ii-aipowered-developer-experience?location=Munich%2C%20Germany&q=%22Software%20Engineer%22&target_level=EARLY",
+      "description": "",
+      "postedDate": "2025-08-31"
+    },
+    {
+      "title": "Software Engineer II, P2020 Monitoring, Cloud",
+      "company": "Google",
+      "location": "Munich, Germany",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/107715701375935174-software-engineer-ii-p2020-monitoring-cloud?location=Munich%2C%20Germany&q=%22Software%20Engineer%22&target_level=EARLY",
+      "description": "",
+      "postedDate": "2025-08-31"
+    }
+  ]
+}
