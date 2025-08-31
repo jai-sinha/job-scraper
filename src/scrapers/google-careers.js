@@ -1,8 +1,5 @@
 import { logger } from '../utils/logger.js';
 
-const SEARCH_LOCATION = process.env.SEARCH_LOCATION || 'Munich';
-const SEARCH_KEYWORDS = (process.env.SEARCH_KEYWORDS || 'software engineer').split(',');
-
 export async function scrapeGoogleCareers(browser) {
   const page = await browser.newPage();
   const jobs = [];
@@ -52,7 +49,7 @@ export async function scrapeGoogleCareers(browser) {
         const job = {
           title: title.trim(),
           company: company,
-          location: location?.trim() || SEARCH_LOCATION,
+          location: location?.trim(),
           url,
           description: '', // Can be filled later if needed
           postedDate: new Date().toISOString().split('T')[0]

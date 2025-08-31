@@ -4,4 +4,7 @@ data/*.db
 *.log
 .DS_Store
 playwright-report/
-test-results/
+test-*
+debug-*
+*results.json
+*.png
