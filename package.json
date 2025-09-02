@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
+    "test-scrapers": "node src/scrapers/test-scrapers.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["job-scraper", "playwright", "automation", "sqlite"],

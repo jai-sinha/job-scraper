@@ -2,14 +2,13 @@ import { chromium } from 'playwright';
 import { saveJob, getJobByUrl } from '../database/db.js';
 import { logger } from '../utils/logger.js';
 import { scrapeGoogleCareers } from './google-careers.js';
-import { scrapeGlassdoor } from './glassdoor.js';
-import { scrapeIndeed } from './indeed.js';
-import { scrapeLinkedIn } from './linkedin.js';
-import { scrapeStepStone } from './stepstone.js';
-
-const REQUEST_DELAY = parseInt(process.env.REQUEST_DELAY_MS) || 2000;
+import { scrapeBMW } from './bmw.js';
 
 export async function runScraping() {
+  const startTime = Date.now();
+  const startMemory = process.memoryUsage();
+  const startCpu = process.cpuUsage();
+  
   const browser = await chromium.launch({ 
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -19,59 +18,48 @@ export async function runScraping() {
   
   try {
     logger.info('🔍 Starting job scraping...');
+    logger.info(`📊 Initial memory: ${Math.round(startMemory.heapUsed / 1024 / 1024)}MB used`);
+    logger.info(`⚡ Initial CPU: ${Math.round((startCpu.user + startCpu.system) / 1000)}ms total`);
     
-    // Scrape Google Careers (working reliably)
-    try {
-      const googleJobs = await scrapeGoogleCareers(browser);
-      const newGoogleJobs = await processJobs(googleJobs, 'Google Careers');
-      newJobs.push(...newGoogleJobs);
-      await delay(REQUEST_DELAY);
-    } catch (error) {
-      logger.error('❌ Error scraping Google Careers:', error);
-    }
+    // Run both scrapers concurrently
+    const [googleJobs, bmwJobs] = await Promise.all([
+      (async () => {
+        try {
+          const jobs = await scrapeGoogleCareers(browser);
+          const newJobs = await processJobs(jobs, 'Google Careers');
+          return newJobs;
+        } catch (error) {
+          logger.error('❌ Error scraping Google Careers:', error);
+          return [];
+        }
+      })(),
+      (async () => {
+        try {
+          const jobs = await scrapeBMW(browser);
+          const newJobs = await processJobs(jobs, 'BMW Careers');
+          return newJobs;
+        } catch (error) {
+          logger.error('❌ Error scraping BMW Careers:', error);
+          return [];
+        }
+      })()
+    ]);
+
+    // Combine results
+    newJobs.push(...googleJobs, ...bmwJobs);
     
-    // Scrape Glassdoor (working)
-    try {
-      const glassdoorJobs = await scrapeGlassdoor(browser);
-      const newGlassdoorJobs = await processJobs(glassdoorJobs, 'Glassdoor');
-      newJobs.push(...newGlassdoorJobs);
-      await delay(REQUEST_DELAY);
-    } catch (error) {
-      logger.error('❌ Error scraping Glassdoor:', error);
-    }
-    
-    // Scrape LinkedIn
-    try {
-      const linkedinJobs = await scrapeLinkedIn(browser);
-      const newLinkedinJobs = await processJobs(linkedinJobs, 'LinkedIn');
-      newJobs.push(...newLinkedinJobs);
-      await delay(REQUEST_DELAY);
-    } catch (error) {
-      logger.error('❌ Error scraping LinkedIn:', error);
-    }
-    
-    // Scrape StepStone (popular in Germany)
-    try {
-      const stepstoneJobs = await scrapeStepStone(browser);
-      const newStepstoneJobs = await processJobs(stepstoneJobs, 'StepStone');
-      newJobs.push(...newStepstoneJobs);
-      await delay(REQUEST_DELAY);
-    } catch (error) {
-      logger.error('❌ Error scraping StepStone:', error);
-    }
-    
-    // TODO: Re-enable Indeed once we improve its detection avoidance
-    // Scrape Indeed
-    // try {
-    //   const indeedJobs = await scrapeIndeed(browser);
-    //   const newIndeedJobs = await processJobs(indeedJobs, 'Indeed');
-    //   newJobs.push(...newIndeedJobs);
-    //   await delay(REQUEST_DELAY);
-    // } catch (error) {
-    //   logger.error('❌ Error scraping Indeed:', error);
-    // }
     
     logger.info(`✅ Scraping completed. Found ${newJobs.length} new jobs`);
+    
+    // Log performance metrics
+    const endMemory = process.memoryUsage();
+    const endCpu = process.cpuUsage(startCpu);
+    const endTime = Date.now();
+    const duration = (endTime - startTime) / 1000;
+    
+    logger.info(`⏱️  Total execution time: ${duration.toFixed(2)} seconds`);
+    logger.info(`📊 Memory usage: ${Math.round(endMemory.heapUsed / 1024 / 1024)}MB used`);
+    logger.info(`⚡ CPU usage: ${Math.round((endCpu.user + endCpu.system) / 1000)}ms total`);
     
   } finally {
     await browser.close();
@@ -103,8 +91,4 @@ async function processJobs(jobs, source) {
   }
   
   return newJobs;
-}
-
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }

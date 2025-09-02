@@ -2,45 +2,31 @@
 
 Automated web scraper that searches for common job sites for new entry-level SWE job postings in Munich and sends email notifications.
 
-## Features
+## Testing Scrapers
 
-- Scrapes Google Careers and Glassdoor for entry-level SWE positions
-- SQLite database to track seen jobs and prevent duplicates
-- Email notifications for new job postings
-- Runs automatically every 12 hours
-- Configurable search criteria
+To test the individual scrapers without running the full application:
 
-## Setup
+```bash
+npm run test-scrapers
+```
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+This will:
+- Run both Google Careers and BMW scrapers
+- Save results to `scraper-test-results.json`
+- Display job counts and any errors in the console
 
-2. Install Playwright browsers:
-   ```bash
-   npx playwright install
-   ```
+The JSON file will contain:
+- Timestamp of the test run
+- Jobs found by each scraper
+- Summary statistics
+- Any errors that occurred
 
-3. Create a `.env` file with your configuration:
-   ```
-   EMAIL_USER=your-email@gmail.com
-   EMAIL_PASS=your-app-password
-   EMAIL_TO=recipient@gmail.com
-   SEARCH_LOCATION=Munich
-   SEARCH_KEYWORDS=software engineer,developer,frontend,backend
-   ```
+## Usage
 
-4. Run the scraper:
-   ```bash
-   npm start
-   ```
+```bash
+# Start the scraper
+npm start
 
-## Project Structure
-
-- `src/index.js` - Main entry point and scheduler
-- `src/scrapers/` - Individual site scrapers
-- `src/database/` - SQLite database operations
-- `src/email/` - Email notification system
-- `src/config/` - Configuration management
-- `data/` - SQLite database storage
+# Development mode with auto-restart
+npm run dev
+```
