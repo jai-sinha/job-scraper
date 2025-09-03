@@ -4,6 +4,7 @@ import { logger } from '../utils/logger.js';
 import { scrapeGoogleCareers } from './google-careers.js';
 import { scrapeBMW } from './bmw.js';
 import { scrapeMicrosoft } from './microsoft.js';
+import { scrapeApple } from './apple.js';
 import { scrapeMicrosoft } from './microsoft.js';
 
 export async function runScraping() {
@@ -24,7 +25,7 @@ export async function runScraping() {
     logger.info(`⚡ Initial CPU: ${Math.round((startCpu.user + startCpu.system) / 1000)}ms total`);
     
         // Run both scrapers concurrently
-    const [googleJobs, bmwJobs, microsoftJobs] = await Promise.all([
+    const [googleJobs, bmwJobs, microsoftJobs, appleJobs] = await Promise.all([
       (async () => {
         try {
           const jobs = await scrapeGoogleCareers(browser);
@@ -54,11 +55,21 @@ export async function runScraping() {
           logger.error('❌ Error scraping Microsoft Careers:', error);
           return [];
         }
+      })(),
+      (async () => {
+        try {
+          const jobs = await scrapeApple(browser);
+          const newJobs = await processJobs(jobs, 'Apple Careers');
+          return newJobs;
+        } catch (error) {
+          logger.error('❌ Error scraping Apple Careers:', error);
+          return [];
+        }
       })()
     ]);
 
     // Combine results
-    newJobs.push(...googleJobs, ...bmwJobs, ...microsoftJobs);
+    newJobs.push(...googleJobs, ...bmwJobs, ...microsoftJobs, ...appleJobs);
     
     
     logger.info(`✅ Scraping completed. Found ${newJobs.length} new jobs`);
