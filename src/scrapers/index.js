@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import { saveJob, getJobByUrl } from '../database/db.js';
 import { logger } from '../utils/logger.js';
-import { scrapeGoogleCareers } from './google-careers.js';
+import { scrapeGoogleCareers } from './google.js';
 import { scrapeBMW } from './bmw.js';
 import { scrapeMicrosoft } from './microsoft.js';
 import { scrapeApple } from './apple.js';

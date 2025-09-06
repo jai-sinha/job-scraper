@@ -10,11 +10,6 @@ To test the individual scrapers without running the full application:
 npm run test-scrapers
 ```
 
-This will:
-- Run both Google Careers and BMW scrapers
-- Save results to `scraper-test-results.json`
-- Display job counts and any errors in the console
-
 The JSON file will contain:
 - Timestamp of the test run
 - Jobs found by each scraper
